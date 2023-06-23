@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aboutus.css' %}">
+</head>
+<body>
+    <h1>DAR AL HOBOOR APARTMENTS</h1>
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+                <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+        </ul>
+    </div>
+    <h1>DAR AL HOBOOR SERVICES</h1> 
+   <p>Welcome to our Services page, where we take pride in offering exceptional accommodation services.</p>
+	
+	<p>At DAR AL HOBOOR, we are committed to delivering outstanding service and ensuring your satisfaction. Our team of experienced professionals is dedicated to providing a seamless, enjoyable and comfortable stay for every customer. Book your room now and experience the difference firsthand.</p>
+	<ol>
+		<li>Fully furnished studio rooms</li>
+		<li>Private kitchen and bathroom</li>
+		<li>Cheap spacious and clean</li>
+		<li>4 Monthly rent from 160 t0 200 OMR only depending on the number of people and room size</li>
+	</ol>
+    <p>Please contact us for further information, inquiries, or to make a reservation. We look forward to serving you and making your stay a memorable one.</p>
+</body>
+<div class="images">
+    <img src="{% static 'css/entrance.jpg' %}">
+    <img src="{% static 'css/stairway2.jpg' %}">
+    <img src="{% static 'css/stairway3.jpg' %}">
+    <img src="{% static 'css/kitchen2.jpg' %}">
+    <img src="{% static 'css/view3.jpg' %}">
+    <img src="{% static 'css/view4.jpg' %}">
+    <img src="{% static 'css/view5.jpg' %}">
+    <img src="{% static 'css/view6.jpg' %}">
+    <img src="{% static 'css/bathroom.jpg' %}">
+    <img src="{% static 'css/backyard.jpg' %}">
+</div>
+
+
+
+
+
+
+</body>
+</html>

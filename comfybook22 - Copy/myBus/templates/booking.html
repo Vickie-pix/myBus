@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HOME PAGE</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/booking.css' %}">
+   
+</head>
+<body>
+    <header class="navbar">
+        <h1>COMFYBOOK</h1>
+        <h6>convenience alongside comfortable rides</h6>
+    </header>
+    
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+                <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+                
+            </ul>
+        </nav>
+ <h2>BOOKED ROOMS</h2>
+ <table border="1">
+ <tbody>
+    {% for each in roominfo %}
+    <tr>
+    <td>{{each.roomnumber}}</td>
+    <td>{{each.floor}}</td>
+    <td>{{each.duration}}</td>
+    
+    </tr>
+    {% endfor %}
+</tbody> 
+</table>  
+        
+</body>
+</html>

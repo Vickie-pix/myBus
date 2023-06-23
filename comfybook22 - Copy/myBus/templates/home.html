@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar Menu for Admin Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
+  
+</head>
+<body>
+  <div class="navbar">
+    <ul>
+        <li class="bar"><a href="{% url 'home' %}">HOME</a></li>
+        <li class="bar"><a href="{% url 'login' %}">LOGIN</a></li>
+        <li class="bar"><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+        <li class="bar"><a href="{% url 'contactus' %}">CONTACT US</a></li>
+        
+    </ul>
+   </div> 
+  <nav class="sidebar">
+    <div class="logo">
+      <img src="{% static 'css/view2.jpg' %}" alt="Your logo" />
+    </div>
+
+    <div class="menu-content">
+      <ul class="menu-items">
+        <div class="menu-title">Dashboard</div>
+
+        <li>
+          <a href="{% url 'rooms' %}" onclick="loadContent('trips.html')">
+            <span class="text">Rooms</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="{% url 'booking' %}" onclick="loadContent('booking.html')">
+            <span class="text">Booked Rooms</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+  <li>
+    <a href="#" onclick="loadContent('trips.html')">
+      <i class='bx bxs-cog'></i>
+      <span class="text">Settings</span>
+    </a>
+  </li>
+</ul>
+
+    </div>
+  </nav>
+
+  <nav class="navbar">
+    <i class="fa-solid fa-bars" id="sidebar-close"></i>
+  </nav>
+
+
+  <main class="main">
+  <h1>WELCOME TO DAR AL HOBOOR APARTMENTS</h1>
+
+
+  <div id="content"></div>
+</main>
+
+
+  <script src="{% static 'myBus/script.js' %}"></script>
+</body>
+</html>

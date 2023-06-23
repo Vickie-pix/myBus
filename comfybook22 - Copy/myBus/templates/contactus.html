@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contactus.css' %}">
+</head>
+<body>
+   <div class="navbar">
+    <ul>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'login' %}">LOGIN</a></li>
+        <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+        <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+        
+    </ul>
+   </div> 
+   <h1>CONTACT PAGE</h1>
+	<p class="support">Our friendly and hospitable customer support team is available to assist you with any questions or concerns you may have. We are committed to providing top-notch support and ensuring your satisfaction.</p>
+	<h3>Address</h3>
+	<p>Villa 1247 Way 6117 Al<br>Kawthar District Al Khoudh<br>Seeb Muscat Oman 1247</p>
+    <p>Our support team is available during the following hours:</p>
+    <h3>Working Hours:</h3>
+     <p>OPEN 24 HOURS</p>
+    <h3>Customer Support</h3>
+    <p class="contact"><a href= "mailto:daralhoboor@gmail.com">Email Us</a></p>
+    <p class="contact">&#128222call</p>
+	<p class="contact"><a href="tel:98971100">98971100 - Caretaker</a></p>
+	<p class="contact"><a href="tel:90994009">90994009 - Caretaker</a></p>
+    <p class="contact"><a href="tel:90991880">90991880 - Manager</a></p>
+
+
+    <p>We value your feedback.</p>
+    <p>Your feedback is essential to us as it helps us improve our services. If you have any suggestions, comments, ideas to share, we'd love to hear from you.
+    
+
+</body>
+</html>

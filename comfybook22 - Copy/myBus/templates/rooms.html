@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/trips.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+            <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+            
+        </ul>
+    </nav>
+<div class="container">
+  <h3>Available rooms</h3>
+    <i class='bx bx-search'></i>
+    <i class='bx bx-filter'></i>
+  <img src="{% static 'css/prices1.png' %}" alt="Your logo" />
+  <img src="{% static 'css/prices2.png' %}" alt="Your logo" />
+  <img src="{% static 'css/prices3.png' %}" alt="Your logo" />
+</div>
+<div class="information">
+<form class="form-frame" method="POST" action="{% url 'rooms' %}">
+  {% csrf_token %}
+<h3>REGISTER YOUR ROOM INFORMATION HERE</h3>
+<label>Room Number</label>
+<input type="text" placeholder="room number" required name="roomnumber"><br><br>
+<label>Floor</label>
+<input type="text" placeholder="floor" name="floor"><br><br>
+<label>Duration</label>
+		<select id="duration" name="duration">
+			<option>Night</option>
+			<option>Month</option>
+		</select><br><br>
+<button type="submit">submit</button>
+</form><br>
+</div>
+</body>
+</html>
+

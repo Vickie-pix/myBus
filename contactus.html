@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contactus.css' %}">
+</head>
+<body>
+   <div class="navbar">
+    <ul>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'login' %}">LOGIN</a></li>
+        <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+        <li><a href="{% url 'services' %}">SERVICES</a></li>
+        <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+        
+    </ul>
+   </div> 
+   <h1>CONTACT PAGE</h1>
+	<p class="support">Our friendly and knowledgeable customer support team is available to assist you with any questions or concerns you may have. We are committed to providing top-notch support and ensuring your satisfaction.</p>
+	<h3>Office Address</h3>
+	<p>Kololo<br>Kampala City<br>Uganda</p>
+    <p>Our support team is available during the following hours:</p>
+    <h3>Working Hours:</h3>
+    <ol>
+       <li>Monday-Friday: 9:00 AM - 6:00 PM (local time)</li>
+       <li>Saturday: 10:00 AM - 4:00 PM (local time)</li>
+       <li>Sunday: Closed  </li>
+    </ol>
+    <h3>Customer Support</h3>
+    <p class="contact"><a href="https://wa.me/256781590470">Whatsapp</a></p>
+    <p class="contact"><a href="https://t.me/Vickie">Telegram</a></p>
+    <p class="contact"><a href= "mailto:comfybook@gmail.com">Email Us</a></p>
+    <p class="contact">&#128222call</p>
+	<p class="contact"><a href="tel:+256 781 590 470">+256 781 590 470</a></p>
+	<p class="contact"><a href="tel:+256 754 529 332">+256 754 529 332</a></p>
+
+    <p>We value your feedback.</p>
+    <p>Your feedback is essential to us as it helps us improve our services. If you have any suggestions, comments, or ideas to share, we'd love to hear from you.
+    
+
+</body>
+</html>

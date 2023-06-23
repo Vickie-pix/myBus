@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/trips.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+            <li><a href="{% url 'services' %}">SERVICES</a></li>
+            <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+            
+        </ul>
+    </nav>
+        <div class="container">
+  <h3>Available Trips</h3>
+    <i class='bx bx-search'></i>
+    <i class='bx bx-filter'></i>
+    <table>
+      <thead>
+        <tr>
+          <th>Routes</th>
+          <th>Duration</th>
+          <th>Distance</th>
+          <th>Price</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p>Kampala to Jinja</p>
+          </td>
+          <td>62 mins</td>
+          <td>82.84 km</td>
+          <td>SHS 10,000</td>
+         
+        </tr>
+        <tr>
+          <td>
+            <p>Kampala to Mbale</p>
+          </td>
+          <td>3 hrs 18 mins</td>
+          <td>222.49 km</td>
+          <td>SHS 30,000</td>
+          
+        </tr>
+        <tr>
+          <td>
+            <p>Kampala to Iganga</p>
+                </td>
+                <td>1 hr 40 mins</td>
+                <td>115.8 km</td>
+                <td>SHS 15,000</td>
+          
+        </tr>
+        <tr>
+          <td>
+          <p>Kampala to Gulu</p>
+                </td>
+                <td>4 hrs 17 mins</td>
+                <td>332.73 km</td>
+                <td>SHS 40,000</td>
+          
+        </tr>
+          <tr>
+          <td>
+            <p>Kampala to Lira</p>
+                </td>
+                <td>4 hr 34 mins</td>
+                <td>342.49 km</td>
+                <td>SHS 35,000</td>
+          
+        </tr>
+        <tr>
+          <td>
+             <p>Kampala to Soroti</p>
+                </td>
+                <td>4 hr 17 mins</td>
+                <td>325.2 km</td>
+                <td>SHS 35,000</td>
+
+        </tr>
+        <tr>
+          <td>
+             <p>Kampala to Mukono</p>
+                </td>
+                <td>40 mins</td>
+                <td>24.61 km</td>
+                <td>SHS 5,000</td>
+          
+        </tr>
+        <tr>
+          <td>
+               <p>Mbale to Gulu</p>
+                </td>
+                <td>5 hr 45 mins</td>
+                <td>339 km</td>
+                <td>SHS 30,000</td>
+          
+        </tr>
+        <tr>
+          <td>
+            <p>Kampala to Bombo</p>
+                </td>
+                <td>1 hr</td>
+                <td>34km km</td>
+                <td>SHS 25,000</td>
+          
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div class="information">
+<form class="form-frame" method="POST" action="{% url 'trip' %}">
+  {% csrf_token %}
+<h3>REGISTER YOUR TRIP HERE</h3>
+<label>Route</label>
+<input type="text" placeholder="route" required name="route"><br><br>
+<label>Duration</label>
+<input type="text" placeholder="duration" name="duration"><br><br>
+<label>Distance</label>
+<input type="text" placeholder="distance" name="distance"><br><br>
+<label>Price</label>
+<input type="text" placeholder="price" name="price"><br><br>
+<button type="submit">submit</button>
+</form><br>
+</div>
+</body>
+</html>
+

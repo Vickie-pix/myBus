@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/buses.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+                <li><a href="{% url 'services' %}">SERVICES</a></li>
+                <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+                
+            </ul>
+        </nav>
+        <div class="container">
+    <form class="mybus"  method="POST">
+    <h3>Buses</h3>
+    {% csrf_token %}
+    <i class='bx bx-search'></i>
+    <i class='bx bx-filter'></i>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+           <label>Find Bus</label>
+          </td>
+          <td><select name="find_bus">
+    	<option>YY Coaches</option>
+    	<option>Gagga Coaches</option>
+    	<option>Baby Coach</option>
+    	<option>Link</option>
+      <option>Gateway</option>
+        </select><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Customer type</label>
+          </td>
+          <td><label>Individual</label>
+    <input type="radio" name="Customer type" value="Individual">
+    <label>Organization</label>
+    <input type="radio" name="Customer type" value="Organization">
+           </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="travelDate">Date of Travel:</label>
+          </td>
+          <td><input type="date" id="travelDate" name="travelDate"></td>
+        </tr>
+        <tr>
+          <td>
+           <label for="numSeats">Number of Seats:</label>
+          </td>
+          <td><input type="number" id="numSeats" name="numSeats" min="1" max="10" step="1"></td>
+        </tr>
+        <tr>
+          <td>
+           <label for="fare">Fare per Seat:</label>
+          </td>
+          <td><input type="number" id="fare" name="fare" min="0" step="5000"></td>
+        </tr>
+        <tr>
+          <td>
+           <label for="totalCost">Total Cost:</label>
+          </td>
+          <td><input type="text" id="totalCost" name="totalCost" readonly></td>
+        </tr>
+        
+        
+        <!-- Add more rows  -->
+      </tbody>
+    </table>
+    <button type="submit" name="submit">Save </button>
+  </form>
+</div>
+</table>
+<script>
+    const numSeats = document.getElementById('numSeats');
+    const fare = document.getElementById('fare');
+    const totalCost = document.getElementById('totalCost');
+
+    function calculateTotalCost() {
+      const numSeats = numSeatsInput.valueAsNumber;
+      const fare = fareInput.valueAsNumber;
+
+      if (numSeats > 0 && fare > 0) {
+        const totalCost = numSeats * fare;
+        totalCostInput.value = totalCost.toFixed(2);
+      } else {
+        totalCostInput.value = '';
+      }
+    }
+
+    numSeatsInput.addEventListener('input', calculateTotalCost);
+    fareInput.addEventListener('input', calculateTotalCost);
+  </script>
+</body>
+</html>
+    
+    
+
+    
+    

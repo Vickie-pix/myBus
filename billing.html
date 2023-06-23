@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/billing.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'aboutus' %}">ABOUT US</a></li>
+                <li><a href="{% url 'services' %}">SERVICES</a></li>
+                <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+                
+            </ul>
+        </nav>
+<div class="container">
+  <form action="/save" method="post">
+    <h3>Billing</h3>
+    <i class='bx bx-search'></i>
+    <i class='bx bx-filter'></i>
+    <table>
+      <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <label for="paymentMethod">Payment Method:</label>
+        </td>
+        <td>
+          <select id="paymentMethod" name="paymentMethod">
+            <option value="creditCard">Credit Card</option>
+            <option value="debitCard">Debit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="bankTransfer">Bank Transfer</option>
+            <option value="mobileMoney">Mobile Money</option>
+          </select><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="paymentAmount">Payment Amount:</label>
+        </td>
+        <td>
+          <div id="paymentAmountContainer" style="display: block;">
+            <input type="text" id="paymentAmount" name="paymentAmount" readonly value="{{total_amount}}">
+          </div>
+        </td>
+      </tr>
+
+      <!-- Add more rows -->
+      </tbody>
+    </table>
+    <button type="submit" name="submit">Save selection</button>
+  </form>
+</div>
+</table>
+<script>
+  const paymentMethodSelect = document.getElementById('paymentMethod');
+  const paymentAmountContainer = document.getElementById('paymentAmountContainer');
+  const paymentAmountInput = document.getElementById('paymentAmount');
+
+  paymentMethodSelect.addEventListener('change', function() {
+    const selectedOption = paymentMethodSelect.value;
+    paymentMethodSelect.addEventListener('change', function() {
+    const selectedOption = paymentMethodSelect.value;
+    let amount = '';
+
+    if (selectedOption === 'creditCard' || selectedOption === 'debitCard' || selectedOption === 'paypal' || selectedOption === 'bankTransfer' || selectedOption === 'mobileMoney') {
+      amount = '5000','10000','15000','20000','25000','30000','35000','40000','45000','50000';
+    } else if (selectedOption === 'paypal') {
+      amount = '5000','10000','15000','20000','25000','30000','35000','40000','45000','50000';
+    } else if (selectedOption === 'bankTransfer') {
+      amount = '5000','10000','15000','20000','25000','30000','35000','40000','45000','50000';
+    } else if (selectedOption === 'mobileMoney') {
+      amount = '5000','10000','15000','20000','25000','30000','35000','40000','45000','50000';
+    }
+
+
+    if (selectedOption === 'creditCard' || selectedOption === 'debitCard' || selectedOption === 'paypal' || selectedOption === 'bankTransfer' || selectedOption === 'mobileMoney') {
+      // Display the payment amount container and set the payment amount
+      paymentAmountContainer.style.display = 'block';
+      paymentAmountInput.value = '100'; // Set the payment amount for credit card or debit card
+    } else {
+      // Hide the payment amount container for other payment methods
+      paymentAmountContainer.style.display = 'none';
+      paymentAmountInput.value = ''; // Clear the payment amount
+    }
+  });
+    function confirmPayment() {
+    const paymentMethod = paymentMethodSelect.value;
+    const paymentAmount = paymentAmountInput.value;
+    const ticketNumber = generateTicketNumber();
+
+    const confirmationMessage = `Confirm payment of ${paymentAmount} with ${paymentMethod}? Ticket Number: ${ticketNumber}`;
+    const confirmed = window.confirm(confirmationMessage);
+
+    if (confirmed) {
+      // Proceed with saving the selection or any other action
+      alert('Payment confirmed. Your ticket number is: ' + ticketNumber);
+    } else {}}
+</script>
+</body>
+</html>
